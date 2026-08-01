@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <title>Ashton Li — Full Stack Developer (Laravel · Vue)</title>
+    <meta
+      name="description"
+      content="Ashton Li is a full stack developer from Taiwan building production web applications with Laravel, Vue and MySQL. Open to remote software engineering roles."
+    />
+
+    <!--
+      Applied before first paint so a hard refresh in dark mode never flashes white.
+      Kept inline (not in a module) because any deferred script is already too late.
+    -->
+    <script>
+      ;(() => {
+        try {
+          const stored = localStorage.getItem('portfolio-theme')
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isDark = stored === 'dark' || ((stored === 'system' || !stored) && prefersDark)
+          document.documentElement.classList.toggle('dark', isDark)
+        } catch {
+          /* private mode / storage disabled — fall back to the light theme */
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

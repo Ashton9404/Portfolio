@@ -1,0 +1,8 @@
+# Normalise line endings so the repo stays LF regardless of who clones it.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.webp binary
+*.woff2 binary
+*.pdf binary
