@@ -25,11 +25,37 @@ const props = withDefaults(
 */
 const tag = computed(() => (props.to ? RouterLink : props.href ? 'a' : 'button'))
 
-const isExternal = computed(() => props.href?.startsWith('http') ?? false)
+/*
+  Bind only the attributes that belong to the element actually being rendered.
+
+  Binding `:href` unconditionally looks harmless but breaks RouterLink: `href`
+  is not one of its props, so it falls through onto the root <a> *after*
+  RouterLink has set its own href — and an undefined fallthrough attribute
+  removes it. The result is an anchor with no href, which is unclickable for
+  keyboard users and invisible to crawlers.
+*/
+const attrs = computed(() => {
+  if (props.to) return { to: props.to }
+
+  if (props.href) {
+    const isExternal = props.href.startsWith('http')
+    return {
+      href: props.href,
+      target: isExternal ? '_blank' : undefined,
+      rel: isExternal ? 'noopener noreferrer' : undefined,
+    }
+  }
+
+  return { type: 'button' as const }
+})
 
 const VARIANTS: Record<Variant, string> = {
-  primary:
-    'bg-accent-600 text-white hover:bg-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600',
+  /*
+    accent-600 in both themes rather than lightening to accent-500 in dark:
+    white on accent-500 measures 4.46:1, just under the 4.5:1 AA threshold for
+    15px text. accent-600 reaches 6.3:1 and reads just as well on near-black.
+  */
+  primary: 'bg-accent-600 text-white hover:bg-accent-700',
   secondary:
     'border border-edge bg-surface-raised text-fg hover:border-edge-strong hover:bg-surface-subtle',
   ghost: 'text-fg-muted hover:bg-surface-subtle hover:text-fg',
@@ -44,10 +70,7 @@ const SIZES: Record<Size, string> = {
 <template>
   <component
     :is="tag"
-    :to="to"
-    :href="href"
-    :target="isExternal ? '_blank' : undefined"
-    :rel="isExternal ? 'noopener noreferrer' : undefined"
+    v-bind="attrs"
     class="inline-flex shrink-0 items-center justify-center rounded-lg font-medium transition-colors disabled:pointer-events-none disabled:opacity-50"
     :class="[VARIANTS[variant], SIZES[size]]"
   >

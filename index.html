@@ -4,12 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
 
+    <!--
+      These tags are duplicated by useSeo() at runtime. They are here as well
+      because social crawlers (LinkedIn, Slack, Facebook) never execute
+      JavaScript — without a static copy, a shared link would preview blank.
+    -->
     <title>Ashton Li — Full Stack Developer (Laravel · Vue)</title>
     <meta
       name="description"
       content="Ashton Li is a full stack developer from Taiwan building production web applications with Laravel, Vue and MySQL. Open to remote software engineering roles."
     />
+    <link rel="canonical" href="https://ashton9404.vercel.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ashton Li — Full Stack Developer" />
+    <meta property="og:title" content="Ashton Li — Full Stack Developer (Laravel · Vue)" />
+    <meta
+      property="og:description"
+      content="Full stack developer from Taiwan building production web applications with Laravel, Vue and MySQL. Open to remote software engineering roles."
+    />
+    <meta property="og:url" content="https://ashton9404.vercel.app/" />
+    <meta property="og:image" content="https://ashton9404.vercel.app/og-image.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="zh_TW" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ashton Li — Full Stack Developer (Laravel · Vue)" />
+    <meta
+      name="twitter:description"
+      content="Full stack developer from Taiwan building production web applications with Laravel, Vue and MySQL."
+    />
+    <meta name="twitter:image" content="https://ashton9404.vercel.app/og-image.png" />
+
+    <!-- Structured data: what makes a search for "Ashton Li developer" resolvable. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ashton Li",
+        "alternateName": "Yucheng Li",
+        "jobTitle": "Full Stack Developer",
+        "url": "https://ashton9404.vercel.app/",
+        "email": "mailto:icedent9404@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kaohsiung",
+          "addressCountry": "TW"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Shu-Te University"
+        },
+        "knowsAbout": ["Laravel", "PHP", "Vue.js", "MySQL", "Docker", "REST API", "Flutter"],
+        "sameAs": [
+          "https://github.com/Ashton9404",
+          "https://www.linkedin.com/in/yucheng-li-4a8b93419"
+        ]
+      }
+    </script>
 
     <!--
       Applied before first paint so a hard refresh in dark mode never flashes white.

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
 import PageSection from '@/components/layout/PageSection.vue'
 import AboutSection from '@/components/sections/AboutSection.vue'
 import ContactSection from '@/components/sections/ContactSection.vue'
@@ -7,6 +9,14 @@ import HeroSection from '@/components/sections/HeroSection.vue'
 import OpenSourceSection from '@/components/sections/OpenSourceSection.vue'
 import ProjectsSection from '@/components/sections/ProjectsSection.vue'
 import SkillsSection from '@/components/sections/SkillsSection.vue'
+import { useSeo } from '@/composables/useSeo'
+
+const { t } = useI18n()
+
+useSeo({
+  title: () => t('seo.homeTitle'),
+  description: () => t('seo.homeDescription'),
+})
 </script>
 
 <template>

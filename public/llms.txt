@@ -1,0 +1,22 @@
+# Ashton Li — Full Stack Developer
+
+Full stack developer based in Kaohsiung, Taiwan, building production web
+applications with Laravel, Vue and MySQL. Open to remote software engineering
+roles with international teams.
+
+Primary stack: PHP, Laravel, Vue 3, TypeScript, MySQL, Docker.
+Also works with: Python, Flutter, Tailwind CSS, Livewire, Linux.
+
+## Pages
+
+- [Portfolio home](https://ashton9404.vercel.app/): about, skills, experience, projects and contact
+- [SunYad Corporate Website](https://ashton9404.vercel.app/projects/sunyad-corporate-website): production Laravel site with a client-operated CMS
+- [Myson Corporate Website](https://ashton9404.vercel.app/projects/myson-corporate-website): production Laravel site with a customised rich-text publishing workflow
+- [Stock Analysis Platform](https://ashton9404.vercel.app/projects/stock-analysis-platform): one Laravel API serving a Vue dashboard and a Flutter mobile app
+- [Laravel Admin Starter](https://ashton9404.vercel.app/projects/laravel-admin-starter): open-source Laravel + Vue admin starter kit
+
+## Contact
+
+- [Email](mailto:icedent9404@gmail.com)
+- [GitHub](https://github.com/Ashton9404)
+- [LinkedIn](https://www.linkedin.com/in/yucheng-li-4a8b93419)

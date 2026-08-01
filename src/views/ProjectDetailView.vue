@@ -6,6 +6,7 @@ import { RouterLink } from 'vue-router'
 import BaseButton from '@/components/ui/BaseButton.vue'
 import TechTag from '@/components/ui/TechTag.vue'
 import { useMessageList } from '@/composables/useMessageList'
+import { useSeo } from '@/composables/useSeo'
 import { findProjectBySlug } from '@/data/projects'
 
 const props = defineProps<{ slug: string }>()
@@ -17,6 +18,16 @@ const base = computed(() => `projects.items.${project.value?.i18nKey}`)
 const features = useMessageList(() => `${base.value}.features`)
 
 const NARRATIVE = ['problem', 'solution', 'outcome'] as const
+
+useSeo({
+  title: () =>
+    project.value
+      ? t('seo.projectTitle', { project: t(`${base.value}.name`) })
+      : t('seo.homeTitle'),
+  // The tagline doubles as the meta description: it is already written as a
+  // one-sentence summary of what the project is.
+  description: () => (project.value ? t(`${base.value}.tagline`) : t('seo.homeDescription')),
+})
 </script>
 
 <template>
