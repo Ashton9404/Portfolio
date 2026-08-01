@@ -10,13 +10,13 @@ defineProps<{
 
 <template>
   <header class="mb-10 sm:mb-12">
-    <p class="font-mono text-xs tracking-widest text-accent-600 uppercase dark:text-accent-400">
+    <p class="text-accent-600 dark:text-accent-400 font-mono text-xs tracking-widest uppercase">
       {{ eyebrow }}
     </p>
-    <h2 class="mt-3 text-2xl font-semibold tracking-tight text-fg sm:text-3xl">
+    <h2 class="text-fg mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
       {{ title }}
     </h2>
-    <p v-if="subtitle" class="mt-3 max-w-2xl text-fg-muted">
+    <p v-if="subtitle" class="text-fg-muted mt-3 max-w-2xl">
       {{ subtitle }}
     </p>
   </header>

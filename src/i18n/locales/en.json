@@ -19,6 +19,228 @@
     "en": "EN",
     "zhTW": "中文"
   },
+  "common": {
+    "present": "Present",
+    "expected": "Expected"
+  },
+  "hero": {
+    "availability": "Open to remote roles",
+    "role": "Full Stack Developer",
+    "headline": "I build production web applications with Laravel and Vue.",
+    "summary": "From relational schema to deployed frontend. I've shipped corporate sites that real clients run themselves, an API serving both a web dashboard and a mobile app, and an open-source admin starter kit. Based in Kaohsiung, Taiwan — working with teams anywhere.",
+    "viewProjects": "View projects",
+    "downloadResume": "Download résumé",
+    "contactMe": "Contact me"
+  },
+  "about": {
+    "eyebrow": "01 / About",
+    "title": "How I work",
+    "paragraphs": [
+      "I'm a full stack developer finishing a Computer Science degree in Taiwan and continuing straight into a Master's programme. Most of my work happens in Laravel: designing the relational schema, writing the API layer, and building the admin tooling that non-technical staff actually use every day. My first production sites went live for paying clients during my internship, which taught me faster than any course that shipping is the halfway point — the code still has to make sense to whoever maintains it next.",
+      "I care about the unglamorous parts that decide whether a project survives its second year: clear boundaries between layers, permissions enforced in one place instead of scattered across controllers, and interfaces a content editor can use without being trained. When I don't understand something I read the source rather than guess, and I'd rather ship a smaller thing I fully understand than a larger one I don't."
+    ],
+    "factsTitle": "At a glance",
+    "facts": {
+      "locationLabel": "Based in",
+      "locationValue": "Kaohsiung, Taiwan · UTC+8",
+      "focusLabel": "Focus",
+      "focusValue": "Laravel · Vue · MySQL",
+      "educationLabel": "Education",
+      "educationValue": "BSc CSIE, continuing to MSc (4+1)",
+      "languagesLabel": "Languages",
+      "languagesValue": "Mandarin (native) · English (B2)",
+      "availabilityLabel": "Looking for",
+      "availabilityValue": "Remote full stack / backend roles"
+    }
+  },
+  "skills": {
+    "eyebrow": "02 / Skills",
+    "title": "What I work with",
+    "subtitle": "Listed with the context I actually used them in, rather than a self-assigned score.",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "database": "Database",
+      "tools": "Tools & Other"
+    },
+    "context": {
+      "php": "Primary language since 2023. Comfortable with modern PHP 8 syntax and PSR conventions.",
+      "laravel": "The framework behind every production site I've shipped — Eloquent, middleware, policies, Blade.",
+      "restApi": "Designed JSON APIs consumed by both a Vue SPA and a Flutter mobile client from one contract.",
+      "livewire": "Used for admin screens where a full SPA layer would have been more cost than benefit.",
+      "vue": "Composition API with TypeScript. Built the data-heavy analysis dashboard and this site.",
+      "typescript": "Typed frontend code by default — I treat a missing type as a missing test.",
+      "tailwind": "Utility-first styling driven by design tokens, including the theme system on this page.",
+      "bootstrap": "Used across client corporate sites where consistent layout mattered more than custom design.",
+      "mysql": "Relational modelling, indexing and query tuning for the stock analysis platform.",
+      "schemaDesign": "Normalised schemas and migrations designed to survive requirement changes.",
+      "eloquent": "Relationships, scopes and eager loading — and knowing when to drop to raw SQL instead.",
+      "docker": "Containerised local and deployment environments so they match production.",
+      "git": "Feature branches, code review and conventional commits as a daily habit.",
+      "linux": "Server administration and deployment on Linux hosts.",
+      "python": "Data parsing and normalisation pipelines feeding the stock analysis platform.",
+      "flutter": "Sole developer of the cross-platform mobile client for the stock analysis platform."
+    }
+  },
+  "experience": {
+    "eyebrow": "03 / Experience",
+    "title": "Where I've worked",
+    "impactLabel": "Impact",
+    "educationTitle": "Education",
+    "entries": {
+      "geekers": {
+        "role": "Software Engineer Intern",
+        "company": "GEEKERS Information Technology Co., Ltd",
+        "location": "Kaohsiung, Taiwan",
+        "responsibilities": [
+          "Built and launched two corporate websites for external clients end to end — Laravel backend, production frontend, deployment.",
+          "Designed custom admin panels around the Summernote WYSIWYG editor so non-technical staff could write, format and publish articles without a developer.",
+          "Implemented an Employee Management System with role-based access control, enforcing permissions through Laravel middleware and policies instead of per-controller checks.",
+          "Chose between Blade, Livewire and Vue per screen, based on how much interactivity that screen genuinely needed."
+        ],
+        "impact": "Both client sites are live and in production. Content changes that previously required a developer are now handled entirely by the clients' own staff."
+      },
+      "departmentWebAdmin": {
+        "role": "Department Web Administrator",
+        "company": "Shu-Te University",
+        "location": "Kaohsiung, Taiwan",
+        "responsibilities": [
+          "Maintained the department's public WordPress site for over two years, covering content, layout, plugin updates and security patching.",
+          "Restructured page layouts and published technical announcements so information reached students reliably."
+        ],
+        "impact": "Kept the department's primary public channel accurate and available across three academic years."
+      }
+    },
+    "degrees": {
+      "master": {
+        "school": "Shu-Te University",
+        "degree": "MSc, Computer Science and Information Engineering (4+1 Programme)"
+      },
+      "bachelor": {
+        "school": "Shu-Te University",
+        "degree": "BSc, Computer Science and Information Engineering"
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "04 / Projects",
+    "title": "Selected work",
+    "subtitle": "Each of these started with a constraint rather than a feature list. Here is the problem, what I built, and what it changed.",
+    "categories": {
+      "client": "Client work · Production",
+      "academic": "Academic project",
+      "openSource": "Open source"
+    },
+    "labels": {
+      "problem": "Problem",
+      "solution": "Solution",
+      "outcome": "Outcome",
+      "features": "What it does",
+      "stack": "Stack",
+      "role": "Role",
+      "viewLive": "Visit site",
+      "viewCode": "View code",
+      "readCaseStudy": "Read the case study",
+      "backToProjects": "Back to projects",
+      "notFound": "That project doesn't exist"
+    },
+    "items": {
+      "sunyad": {
+        "name": "SunYad Corporate Website",
+        "tagline": "A corporate site for a real estate company, with a CMS its own staff operate.",
+        "problem": "The client wanted a premium corporate presence, but also needed to change banners, featured listings and section order themselves. A hand-coded site would have turned every content change into a developer ticket.",
+        "solution": "I built the public pages as reusable Blade components and backed each one with CMS-managed records. Administrators reorder sections, swap banners and update featured content from the admin panel, while the templates constrain what can change.",
+        "outcome": "The hardest call was how much freedom to hand the CMS. Full flexibility would have let staff break the layout; too little would have sent them back to us for every edit. I settled on structured per-component fields — the client owns the content, the design system owns the presentation.",
+        "features": [
+          "Banner and featured-content management with drag-free ordering",
+          "Reusable Blade components shared across every page type",
+          "Responsive production frontend built to the client's brand",
+          "Admin panel usable by staff with no technical background"
+        ]
+      },
+      "myson": {
+        "name": "Myson Corporate Website",
+        "tagline": "A rich-text publishing workflow that can't quietly wreck the layout.",
+        "problem": "Myson's team publishes content regularly, so the editing experience mattered more than feature count. Out-of-the-box WYSIWYG output drifts away from a site's typography and breaks layout consistency one paste at a time.",
+        "solution": "I customised the Summernote editor and the backend workflow around it: a constrained toolbar, sanitised output, and editor styles that mirror the public site so what an editor sees is what a visitor gets.",
+        "outcome": "Updates that used to require a developer now take minutes, and the site hasn't degraded into inconsistent typography — the usual price of giving non-technical users a rich-text field.",
+        "features": [
+          "Customised Summernote editor with a deliberately limited toolbar",
+          "Sanitised rich-text output stored as structured content",
+          "WYSIWYG styles matched to the live site's typography",
+          "Backend CMS covering site-wide information and page content"
+        ]
+      },
+      "stockAnalysis": {
+        "name": "Stock Analysis Platform & Mobile App",
+        "tagline": "One Laravel API, a Vue dashboard and a Flutter app that never disagree.",
+        "role": "Core full stack developer · Lead mobile engineer",
+        "problem": "Comparing technical indicators across many stocks means switching between tools that don't agree on the underlying numbers. We wanted a single platform where the web dashboard and the mobile app read the same API and therefore the same data.",
+        "solution": "I co-designed the MySQL schema and built the Laravel API on top of it, with Python pipelines parsing and normalising incoming market data. The web dashboard is Vue 3 with Chart.js for indicator visualisation; I owned the Flutter mobile client end to end, deliberately reusing the same API contract so the two clients cannot diverge.",
+        "outcome": "The real design work was deciding what the API owns versus what each client computes. Putting indicator calculation server-side kept the Flutter and Vue clients thin and made both of them consistent by construction.",
+        "features": [
+          "Laravel REST API serving a web and a mobile client from one contract",
+          "Python pipelines for parsing and normalising market data",
+          "Interactive Vue 3 + Chart.js dashboard for technical analysis",
+          "Cross-platform Flutter application built and shipped solo"
+        ]
+      },
+      "laravelAdminStarter": {
+        "name": "Laravel Admin Starter",
+        "tagline": "The week of setup work every Laravel project repeats, extracted into a starter kit.",
+        "problem": "Every Laravel project I shipped began the same way: wire up authentication, build a roles-and-permissions layer, scaffold CRUD screens, add a CMS module, then containerise it. That is roughly a week before any product-specific code exists — and each rebuild quietly made slightly different decisions.",
+        "solution": "I extracted that groundwork into an opinionated starter: authentication, a role and permission system enforced through middleware and policies, a dashboard with analytics, generic CRUD management, a CMS module, multi-language support, and a Docker setup that mirrors production.",
+        "outcome": "It removes the part of a project where mistakes are cheapest to make and most expensive to discover later — authorisation. New projects now start from a permission model that has already been thought through once.",
+        "features": [
+          "Authentication with a role and permission system",
+          "Dashboard analytics and generic CRUD management",
+          "CMS module for editable site content",
+          "Multi-language support across backend and frontend",
+          "Docker deployment matching the production environment"
+        ]
+      }
+    }
+  },
+  "openSource": {
+    "eyebrow": "05 / Open Source",
+    "title": "Laravel Admin Starter",
+    "subtitle": "An opinionated Laravel + Vue admin starter kit for SaaS products and business websites.",
+    "whyTitle": "Why I built it",
+    "why": "After the third project where I rebuilt authentication and a permission layer from scratch, it stopped being a coincidence and started being a missing tool. Worse, each rebuild made slightly different authorisation decisions, which is exactly the kind of inconsistency that turns into a security bug. Extracting it into a starter kit forced me to make those decisions once, deliberately, and write them down.",
+    "challengesTitle": "Technical challenges",
+    "challenges": [
+      "Authorisation sprawl. The naive version scatters permission checks across controllers, views and route definitions, so nobody can answer \"who can do this?\" without reading the whole codebase. I moved authorisation into policies behind a single middleware layer: a permission is defined once and enforced everywhere.",
+      "Coherent multi-language support. Backend validation messages, CMS content and frontend strings each want their own translation mechanism. Getting them to behave like one system — rather than three that disagree about the current locale — took more iterations than the permission layer did.",
+      "Staying a starter, not a framework. Every feature added is a feature the next developer has to understand or delete. I have turned down more ideas than I have merged, which is uncomfortable but is the whole point of a starter kit."
+    ],
+    "architectureTitle": "Architecture decisions",
+    "architecture": [
+      "Laravel owns the API and authorisation; Vue owns the admin interface. The boundary between them is a JSON API, so the frontend can be replaced without touching business logic.",
+      "Docker Compose mirrors the production environment, which removes \"works on my machine\" as a category of bug rather than merely making it rarer.",
+      "CMS content is stored as structured records rather than HTML blobs, so it stays queryable, re-themeable and safe to render.",
+      "Permissions are data, not code. Adding a role is a seeder change, not a deployment of new conditionals."
+    ],
+    "roadmapTitle": "Roadmap",
+    "roadmap": [
+      "An end-to-end test suite covering the permission layer",
+      "Audit logging for administrative actions",
+      "First-class API token management for headless use",
+      "A published documentation site with an installation walkthrough"
+    ],
+    "viewRepository": "View the repository"
+  },
+  "contact": {
+    "eyebrow": "06 / Contact",
+    "title": "Let's talk",
+    "description": "I'm looking for remote full stack or backend roles with international teams, and I'm open to freelance work. Email is the fastest way to reach me — I reply to everything.",
+    "emailLabel": "Email",
+    "githubLabel": "GitHub",
+    "linkedinLabel": "LinkedIn",
+    "locationLabel": "Location",
+    "resumeTitle": "Prefer the one-page version?",
+    "resumeDescription": "The résumé covers the same experience in a format you can forward.",
+    "resumeCta": "Download résumé (PDF)"
+  },
   "footer": {
     "tagline": "Full Stack Developer · Laravel · Vue · Open to remote roles",
     "builtWith": "Built with Vue 3, TypeScript and Tailwind CSS.",
@@ -30,5 +252,10 @@
     "title": "This page doesn't exist",
     "description": "The link may be outdated, or the page was moved. Everything else is still one click away.",
     "backHome": "Back to home"
+  },
+  "seo": {
+    "homeTitle": "Ashton Li — Full Stack Developer (Laravel · Vue)",
+    "homeDescription": "Ashton Li is a full stack developer from Taiwan building production web applications with Laravel, Vue and MySQL. Open to remote software engineering roles.",
+    "projectTitle": "{project} — Ashton Li"
   }
 }

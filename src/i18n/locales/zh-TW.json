@@ -19,6 +19,228 @@
     "en": "EN",
     "zhTW": "中文"
   },
+  "common": {
+    "present": "至今",
+    "expected": "預計"
+  },
+  "hero": {
+    "availability": "正在尋找遠端職缺",
+    "role": "全端工程師",
+    "headline": "我用 Laravel 與 Vue 打造真正上線的網頁應用。",
+    "summary": "從資料庫結構設計到前端部署。我交付過客戶自己就能維運的企業官網、一套同時支撐網頁儀表板與手機 App 的 API，以及一個開源的 Laravel 後台起始套件。人在高雄，合作對象不限地區。",
+    "viewProjects": "查看專案",
+    "downloadResume": "下載履歷",
+    "contactMe": "與我聯絡"
+  },
+  "about": {
+    "eyebrow": "01 / 關於我",
+    "title": "我的工作方式",
+    "paragraphs": [
+      "我是一名全端工程師，即將完成資訊工程學士學位，並接續就讀碩士班。工作內容大多圍繞 Laravel：設計關聯式資料庫結構、撰寫 API 層，以及打造非技術同仁每天真的會用到的後台工具。實習期間我的第一批網站就直接上線給付費客戶使用，那段經驗比任何課程都更快讓我理解一件事——上線只是完成一半，程式碼還得讓下一個接手的人看得懂。",
+      "我在意的是那些決定專案能不能撐過第二年、卻不太起眼的部分：層與層之間界線清楚、權限集中在一處控管而不是散落在各個 controller、以及編輯人員不需要教學就能上手的介面。遇到不懂的東西我會去讀原始碼而不是猜，而且我寧可交付一個自己完全理解的小東西，也不要一個自己搞不清楚的大東西。"
+    ],
+    "factsTitle": "基本資料",
+    "facts": {
+      "locationLabel": "所在地",
+      "locationValue": "台灣高雄 · UTC+8",
+      "focusLabel": "主力技術",
+      "focusValue": "Laravel · Vue · MySQL",
+      "educationLabel": "學歷",
+      "educationValue": "資訊工程學士，續讀碩士（4+1）",
+      "languagesLabel": "語言",
+      "languagesValue": "中文（母語）· 英文（B2）",
+      "availabilityLabel": "尋找機會",
+      "availabilityValue": "遠端全端／後端工程師職缺"
+    }
+  },
+  "skills": {
+    "eyebrow": "02 / 技術能力",
+    "title": "我使用的技術",
+    "subtitle": "附上實際的使用情境，而不是自己給自己打的分數。",
+    "categories": {
+      "backend": "後端",
+      "frontend": "前端",
+      "database": "資料庫",
+      "tools": "工具與其他"
+    },
+    "context": {
+      "php": "2023 年起的主力語言，熟悉 PHP 8 的現代語法與 PSR 規範。",
+      "laravel": "我所有上線專案的核心框架——Eloquent、middleware、policy、Blade。",
+      "restApi": "設計過同時供 Vue SPA 與 Flutter App 使用的 JSON API，兩端共用同一份契約。",
+      "livewire": "用在導入完整 SPA 並不划算的後台頁面上。",
+      "vue": "以 Composition API 搭配 TypeScript，做過資料密集的分析儀表板，這個網站也是。",
+      "typescript": "前端預設就用型別寫——少一個型別，等於少一個測試。",
+      "tailwind": "以設計 token 驅動的 utility-first 樣式，包含本頁的主題系統。",
+      "bootstrap": "用於客戶企業官網，這類專案版面一致性比客製設計更重要。",
+      "mysql": "為股票分析平台做關聯式建模、索引設計與查詢調校。",
+      "schemaDesign": "正規化的資料結構與 migration，設計時就考慮需求會變。",
+      "eloquent": "關聯、scope 與 eager loading——也清楚什麼時候該直接寫 SQL。",
+      "docker": "把本機與部署環境容器化，讓它們與 production 一致。",
+      "git": "feature branch、code review 與 conventional commits 是日常習慣。",
+      "linux": "Linux 主機的伺服器管理與部署。",
+      "python": "為股票分析平台建立資料解析與正規化的處理流程。",
+      "flutter": "獨立開發股票分析平台的跨平台行動端 App。"
+    }
+  },
+  "experience": {
+    "eyebrow": "03 / 工作經歷",
+    "title": "我待過的地方",
+    "impactLabel": "實際成果",
+    "educationTitle": "學歷",
+    "entries": {
+      "geekers": {
+        "role": "軟體工程實習生",
+        "company": "極客資訊科技股份有限公司（GEEKERS）",
+        "location": "台灣高雄",
+        "responsibilities": [
+          "從零到上線，獨立完成兩個客戶企業官網——涵蓋 Laravel 後端、正式版前端與部署。",
+          "以 Summernote 所見即所得編輯器為核心設計客製後台，讓非技術同仁不需工程師協助就能撰寫、排版並發佈文章。",
+          "開發具備角色權限控管（RBAC）的員工管理系統，透過 Laravel middleware 與 policy 統一控管權限，而非在各個 controller 各自判斷。",
+          "依照每個畫面實際需要的互動程度，分別選用 Blade、Livewire 或 Vue。"
+        ],
+        "impact": "兩個客戶網站皆已正式上線運作中。過去需要工程師處理的內容更新，現在客戶自家人員就能完全自行完成。"
+      },
+      "departmentWebAdmin": {
+        "role": "系網頁管理員",
+        "company": "樹德科技大學",
+        "location": "台灣高雄",
+        "responsibilities": [
+          "維護系上對外的 WordPress 官方網站超過兩年，涵蓋內容、版面、外掛更新與資安修補。",
+          "重整頁面版面並發佈技術公告，確保資訊能確實傳達給學生。"
+        ],
+        "impact": "在三個學年度中，持續維持系上主要對外管道的正確性與可用性。"
+      }
+    },
+    "degrees": {
+      "master": {
+        "school": "樹德科技大學",
+        "degree": "資訊工程碩士（4+1 學碩一貫）"
+      },
+      "bachelor": {
+        "school": "樹德科技大學",
+        "degree": "資訊工程學士"
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "04 / 專案作品",
+    "title": "精選作品",
+    "subtitle": "這些專案的起點都是一個限制，而不是一份功能清單。以下是問題、我做了什麼，以及它改變了什麼。",
+    "categories": {
+      "client": "客戶專案 · 已上線",
+      "academic": "學術專案",
+      "openSource": "開源專案"
+    },
+    "labels": {
+      "problem": "問題",
+      "solution": "解法",
+      "outcome": "成果",
+      "features": "功能內容",
+      "stack": "技術棧",
+      "role": "擔任角色",
+      "viewLive": "前往網站",
+      "viewCode": "查看程式碼",
+      "readCaseStudy": "閱讀完整說明",
+      "backToProjects": "返回專案列表",
+      "notFound": "找不到這個專案"
+    },
+    "items": {
+      "sunyad": {
+        "name": "SunYad 企業官網",
+        "tagline": "房地產公司的企業官網，後台由客戶自己的同仁維運。",
+        "problem": "客戶希望有質感的企業形象網站，同時又要能自行更換首頁輪播、精選內容與區塊順序。如果做成寫死的靜態頁面，每一次內容調整都會變成一張工單。",
+        "solution": "我把前台頁面拆成可重用的 Blade 元件，每個元件背後都對應後台可管理的資料。管理者能在後台調整區塊順序、更換輪播圖與精選內容，而版型本身限制了「能改什麼」。",
+        "outcome": "最難的決定是後台要給多少自由度。全開會讓同仁不小心弄壞版面，太封閉又會讓他們每次都得回來找我們。最後我選擇以元件為單位的結構化欄位——內容歸客戶掌控，呈現方式歸設計系統掌控。",
+        "features": [
+          "輪播與精選內容管理，含排序功能",
+          "跨頁面共用的可重用 Blade 元件",
+          "依客戶品牌打造的響應式正式版前端",
+          "零技術背景同仁也能操作的後台介面"
+        ]
+      },
+      "myson": {
+        "name": "Myson 企業官網",
+        "tagline": "一套不會在編輯過程中悄悄弄壞版面的圖文發佈流程。",
+        "problem": "Myson 的團隊會固定發佈內容，因此編輯體驗比功能數量更關鍵。未經調整的所見即所得編輯器，輸出的內容會逐漸偏離網站既有的字級與樣式，一次貼上就破壞一次一致性。",
+        "solution": "我客製了 Summernote 編輯器與其後端流程：精簡工具列、輸出內容淨化，並讓編輯器的樣式與前台一致，做到編輯看到什麼、訪客就看到什麼。",
+        "outcome": "過去需要工程師處理的更新現在幾分鐘就能完成，而網站也沒有像多數情況那樣，在開放圖文編輯後逐漸變得排版凌亂。",
+        "features": [
+          "客製化 Summernote 編輯器，工具列刻意精簡",
+          "淨化後的圖文輸出，以結構化方式儲存",
+          "編輯器樣式對齊前台實際字級與排版",
+          "涵蓋網站資訊與頁面內容的後台 CMS"
+        ]
+      },
+      "stockAnalysis": {
+        "name": "股票分析平台與行動 App",
+        "tagline": "一支 Laravel API，同時餵養 Vue 儀表板與 Flutter App，數據永遠一致。",
+        "role": "核心全端開發者 · 行動端主要工程師",
+        "problem": "要比較多檔股票的技術指標，往往得在好幾個工具之間切換，而這些工具給出的數字還不見得一致。我們想做的是單一平台：網頁儀表板與手機 App 讀同一支 API，因此看到同一份數據。",
+        "solution": "我共同設計 MySQL 資料結構並在其上開發 Laravel API，另以 Python 建立行情資料的解析與正規化流程。網頁端使用 Vue 3 搭配 Chart.js 呈現技術指標；行動端則由我獨立負責，刻意沿用同一份 API 契約，讓兩個客戶端不可能各自偏離。",
+        "outcome": "真正的設計工作在於劃分「哪些由 API 負責、哪些由各客戶端自行計算」。把指標運算放到伺服器端，讓 Flutter 與 Vue 兩端都保持輕薄，也從架構上保證了一致性。",
+        "features": [
+          "以單一契約同時服務網頁與行動端的 Laravel REST API",
+          "以 Python 建立的行情資料解析與正規化流程",
+          "Vue 3 + Chart.js 打造的互動式技術分析儀表板",
+          "獨立開發並交付的 Flutter 跨平台應用程式"
+        ]
+      },
+      "laravelAdminStarter": {
+        "name": "Laravel Admin Starter",
+        "tagline": "把每個 Laravel 專案都要重做一次的那一週前置工作，抽成一套起始套件。",
+        "problem": "我每個 Laravel 專案的開場都一樣：接上身分驗證、做一套角色權限、生出 CRUD 畫面、加上 CMS 模組，再容器化。這大概要花掉一週，才開始寫真正屬於這個產品的程式碼——而且每重做一次，決策都會悄悄不太一樣。",
+        "solution": "我把這些前置工作抽成一套有明確主張的起始套件：身分驗證、以 middleware 與 policy 落實的角色權限系統、含分析圖表的儀表板、通用 CRUD 管理、CMS 模組、多語系支援，以及對齊 production 的 Docker 環境。",
+        "outcome": "它移除的正是專案中「最容易犯錯、又最晚才會被發現」的那一塊——授權。新專案現在直接從一套已經被認真想過一次的權限模型開始。",
+        "features": [
+          "身分驗證與角色權限系統",
+          "儀表板分析圖表與通用 CRUD 管理",
+          "可編輯站台內容的 CMS 模組",
+          "後端與前端一致的多語系支援",
+          "對齊正式環境的 Docker 部署設定"
+        ]
+      }
+    }
+  },
+  "openSource": {
+    "eyebrow": "05 / 開源專案",
+    "title": "Laravel Admin Starter",
+    "subtitle": "一套面向 SaaS 產品與企業網站、具明確主張的 Laravel + Vue 後台起始套件。",
+    "whyTitle": "我為什麼做這個",
+    "why": "當我第三次從頭重做身分驗證與權限層時，這就不再是巧合，而是一個真的缺掉的工具。更麻煩的是，每重做一次，授權相關的決策就會有些微不同——而這種不一致，正是資安漏洞的溫床。把它抽成起始套件，等於逼自己把這些決策認真想過一次、並且寫下來。",
+    "challengesTitle": "技術挑戰",
+    "challenges": [
+      "權限判斷四散各處。最直覺的寫法會把權限檢查散落在 controller、view 與路由定義裡，導致沒有人能在不讀完整份程式碼的情況下回答「誰可以做這件事」。我把授權收進 policy，並統一由一層 middleware 把關：權限只定義一次，卻在每個地方生效。",
+      "讓多語系真的像一套系統。後端驗證訊息、CMS 內容與前端字串各自都想用自己的翻譯機制。要讓它們表現得像同一套系統，而不是三套對「當前語系」認知不同的東西，花掉的時間比權限層還多。",
+      "維持它是「起始套件」而不是框架。每多加一個功能，下一位使用者就得多理解一個功能，或多刪一個功能。我否決掉的想法比合併進去的多——這很不舒服，但這正是起始套件存在的意義。"
+    ],
+    "architectureTitle": "架構決策",
+    "architecture": [
+      "Laravel 負責 API 與授權，Vue 負責後台介面，兩者之間以 JSON API 為界線。這代表前端可以整個換掉，而不必動到任何商業邏輯。",
+      "以 Docker Compose 對齊正式環境，把「在我機器上是好的」從一整類 bug 中直接移除，而不只是降低發生機率。",
+      "CMS 內容以結構化資料儲存，而非一坨 HTML，因此仍然可查詢、可換樣式，也能安全地輸出。",
+      "權限是資料，不是程式碼。新增一個角色是改 seeder，而不是部署一堆新的條件判斷。"
+    ],
+    "roadmapTitle": "後續規劃",
+    "roadmap": [
+      "涵蓋權限層的端對端測試",
+      "管理操作的稽核日誌（audit log）",
+      "支援 headless 使用情境的 API token 管理",
+      "含安裝教學的正式文件網站"
+    ],
+    "viewRepository": "查看 Repository"
+  },
+  "contact": {
+    "eyebrow": "06 / 聯絡方式",
+    "title": "聊聊吧",
+    "description": "我正在尋找與國際團隊合作的遠端全端或後端工程師職缺，也接受接案合作。寄信給我是最快的方式——每一封我都會回。",
+    "emailLabel": "電子郵件",
+    "githubLabel": "GitHub",
+    "linkedinLabel": "LinkedIn",
+    "locationLabel": "所在地",
+    "resumeTitle": "想看一頁式的版本？",
+    "resumeDescription": "履歷涵蓋相同的經歷，格式方便直接轉寄。",
+    "resumeCta": "下載履歷（PDF）"
+  },
   "footer": {
     "tagline": "全端工程師 · Laravel · Vue · 尋找遠端職缺中",
     "builtWith": "以 Vue 3、TypeScript 與 Tailwind CSS 打造。",
@@ -30,5 +252,10 @@
     "title": "找不到這個頁面",
     "description": "連結可能已經失效，或頁面被移動了。其他內容都還在，一鍵就能回去。",
     "backHome": "回到首頁"
+  },
+  "seo": {
+    "homeTitle": "Ashton Li — 全端工程師（Laravel · Vue）",
+    "homeDescription": "Ashton Li 是來自台灣的全端工程師，以 Laravel、Vue 與 MySQL 打造正式上線的網頁應用，目前尋找遠端軟體工程職缺。",
+    "projectTitle": "{project} — Ashton Li"
   }
 }

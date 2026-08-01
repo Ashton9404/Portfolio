@@ -14,7 +14,7 @@ defineProps<{
   -->
   <section
     :id="id"
-    class="scroll-mt-20 border-t border-edge/60 py-20 first:border-t-0 sm:py-24"
+    class="border-edge/60 scroll-mt-20 border-t py-20 first:border-t-0 sm:py-24"
     :class="tone === 'subtle' ? 'bg-surface-subtle' : 'bg-surface'"
   >
     <div class="mx-auto max-w-5xl px-6">

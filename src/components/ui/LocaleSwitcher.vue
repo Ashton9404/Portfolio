@@ -13,7 +13,7 @@ const OPTIONS: { value: AppLocale; labelKey: 'locale.en' | 'locale.zhTW' }[] = [
 
 <template>
   <div
-    class="flex items-center rounded-lg border border-edge p-0.5"
+    class="border-edge flex items-center rounded-lg border p-0.5"
     role="group"
     :aria-label="t('locale.label')"
   >
@@ -25,7 +25,7 @@ const OPTIONS: { value: AppLocale; labelKey: 'locale.en' | 'locale.zhTW' }[] = [
       class="rounded-md px-2 py-1 font-mono text-xs transition-colors"
       :class="
         locale === option.value
-          ? 'bg-surface-subtle font-medium text-fg'
+          ? 'bg-surface-subtle text-fg font-medium'
           : 'text-fg-faint hover:text-fg'
       "
       @click="setLocale(option.value)"

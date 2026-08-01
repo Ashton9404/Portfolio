@@ -40,7 +40,10 @@ onMounted(() => {
 onBeforeUnmount(() => window.removeEventListener('scroll', handleScroll))
 
 // Any navigation closes the mobile panel, including same-page hash jumps.
-watch(() => [route.path, route.hash], () => (isMenuOpen.value = false))
+watch(
+  () => [route.path, route.hash],
+  () => (isMenuOpen.value = false),
+)
 </script>
 
 <template>
@@ -48,14 +51,14 @@ watch(() => [route.path, route.hash], () => (isMenuOpen.value = false))
     class="sticky top-0 z-50 transition-colors"
     :class="
       isScrolled
-        ? 'border-b border-edge bg-surface/80 backdrop-blur-md'
-        : 'border-b border-transparent bg-surface'
+        ? 'border-edge bg-surface/80 border-b backdrop-blur-md'
+        : 'bg-surface border-b border-transparent'
     "
   >
     <div class="mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-6">
       <RouterLink
         to="/"
-        class="font-mono text-sm font-semibold tracking-tight text-fg"
+        class="text-fg font-mono text-sm font-semibold tracking-tight"
         :aria-label="t('nav.brandAria')"
       >
         {{ profile.name }}<span class="text-accent-500">.</span>
@@ -66,7 +69,7 @@ watch(() => [route.path, route.hash], () => (isMenuOpen.value = false))
           v-for="item in NAV_ITEMS"
           :key="item.key"
           :to="{ path: '/', hash: item.hash }"
-          class="rounded-md px-3 py-2 text-sm text-fg-muted transition-colors hover:bg-surface-subtle hover:text-fg"
+          class="text-fg-muted hover:bg-surface-subtle hover:text-fg rounded-md px-3 py-2 text-sm transition-colors"
         >
           {{ t(`nav.${item.key}`) }}
         </RouterLink>
@@ -78,7 +81,7 @@ watch(() => [route.path, route.hash], () => (isMenuOpen.value = false))
 
         <button
           type="button"
-          class="inline-flex size-9 items-center justify-center rounded-lg border border-edge text-fg-muted transition-colors hover:bg-surface-subtle hover:text-fg md:hidden"
+          class="border-edge text-fg-muted hover:bg-surface-subtle hover:text-fg inline-flex size-9 items-center justify-center rounded-lg border transition-colors md:hidden"
           :aria-label="isMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')"
           :aria-expanded="isMenuOpen"
           aria-controls="mobile-nav"
@@ -103,14 +106,14 @@ watch(() => [route.path, route.hash], () => (isMenuOpen.value = false))
     <nav
       v-show="isMenuOpen"
       id="mobile-nav"
-      class="border-t border-edge bg-surface md:hidden"
+      class="border-edge bg-surface border-t md:hidden"
       aria-label="Primary mobile"
     >
       <ul class="mx-auto max-w-5xl px-4 py-2">
         <li v-for="item in NAV_ITEMS" :key="item.key">
           <RouterLink
             :to="{ path: '/', hash: item.hash }"
-            class="block rounded-md px-3 py-2.5 text-sm text-fg-muted transition-colors hover:bg-surface-subtle hover:text-fg"
+            class="text-fg-muted hover:bg-surface-subtle hover:text-fg block rounded-md px-3 py-2.5 text-sm transition-colors"
           >
             {{ t(`nav.${item.key}`) }}
           </RouterLink>

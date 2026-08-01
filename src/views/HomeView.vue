@@ -1,37 +1,41 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-
 import PageSection from '@/components/layout/PageSection.vue'
-import SectionHeading from '@/components/ui/SectionHeading.vue'
-
-const { t } = useI18n()
-
-// Section shells only — real content lands in the next phases. The ids exist
-// now so the header navigation and scroll offsets can be verified early.
-const SECTIONS = [
-  { id: 'about', key: 'about' },
-  { id: 'skills', key: 'skills' },
-  { id: 'experience', key: 'experience' },
-  { id: 'projects', key: 'projects' },
-  { id: 'open-source', key: 'openSource' },
-  { id: 'contact', key: 'contact' },
-] as const
+import AboutSection from '@/components/sections/AboutSection.vue'
+import ContactSection from '@/components/sections/ContactSection.vue'
+import ExperienceSection from '@/components/sections/ExperienceSection.vue'
+import HeroSection from '@/components/sections/HeroSection.vue'
+import OpenSourceSection from '@/components/sections/OpenSourceSection.vue'
+import ProjectsSection from '@/components/sections/ProjectsSection.vue'
+import SkillsSection from '@/components/sections/SkillsSection.vue'
 </script>
 
 <template>
   <!-- Single root element: <Transition> in App.vue cannot animate a fragment. -->
   <div>
-    <PageSection
-      v-for="(section, index) in SECTIONS"
-      :id="section.id"
-      :key="section.id"
-      :tone="index % 2 === 1 ? 'subtle' : 'default'"
-    >
-      <SectionHeading
-        :eyebrow="`${String(index + 1).padStart(2, '0')} / ${t(`nav.${section.key}`)}`"
-        :title="t(`nav.${section.key}`)"
-      />
-      <p class="font-mono text-sm text-fg-faint">Content lands in a later phase.</p>
+    <HeroSection />
+
+    <PageSection id="about">
+      <AboutSection />
+    </PageSection>
+
+    <PageSection id="skills" tone="subtle">
+      <SkillsSection />
+    </PageSection>
+
+    <PageSection id="experience">
+      <ExperienceSection />
+    </PageSection>
+
+    <PageSection id="projects" tone="subtle">
+      <ProjectsSection />
+    </PageSection>
+
+    <PageSection id="open-source">
+      <OpenSourceSection />
+    </PageSection>
+
+    <PageSection id="contact" tone="subtle">
+      <ContactSection />
     </PageSection>
   </div>
 </template>

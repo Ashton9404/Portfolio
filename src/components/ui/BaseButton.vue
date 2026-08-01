@@ -28,8 +28,10 @@ const tag = computed(() => (props.to ? RouterLink : props.href ? 'a' : 'button')
 const isExternal = computed(() => props.href?.startsWith('http') ?? false)
 
 const VARIANTS: Record<Variant, string> = {
-  primary: 'bg-accent-600 text-white hover:bg-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600',
-  secondary: 'border border-edge bg-surface-raised text-fg hover:border-edge-strong hover:bg-surface-subtle',
+  primary:
+    'bg-accent-600 text-white hover:bg-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600',
+  secondary:
+    'border border-edge bg-surface-raised text-fg hover:border-edge-strong hover:bg-surface-subtle',
   ghost: 'text-fg-muted hover:bg-surface-subtle hover:text-fg',
 }
 

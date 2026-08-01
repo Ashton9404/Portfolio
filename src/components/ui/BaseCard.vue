@@ -4,7 +4,7 @@ withDefaults(defineProps<{ interactive?: boolean }>(), { interactive: false })
 
 <template>
   <div
-    class="rounded-xl border border-edge bg-surface-raised transition-colors"
+    class="border-edge bg-surface-raised rounded-xl border transition-colors"
     :class="interactive ? 'hover:border-edge-strong hover:bg-surface-subtle' : ''"
   >
     <slot />

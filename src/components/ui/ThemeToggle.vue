@@ -15,7 +15,7 @@ const label = computed(() => (isDark.value ? t('theme.toLight') : t('theme.toDar
     type="button"
     :aria-label="label"
     :title="label"
-    class="inline-flex size-9 items-center justify-center rounded-lg border border-edge text-fg-muted transition-colors hover:bg-surface-subtle hover:text-fg"
+    class="border-edge text-fg-muted hover:bg-surface-subtle hover:text-fg inline-flex size-9 items-center justify-center rounded-lg border transition-colors"
     @click="toggleTheme"
   >
     <!-- Inline SVGs: two icons do not justify an icon-library dependency. -->

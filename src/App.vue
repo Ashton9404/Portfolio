@@ -9,7 +9,7 @@ import AppHeader from '@/components/layout/AppHeader.vue'
   <!-- Keyboard users get past the nav without tabbing through every link. -->
   <a
     href="#main"
-    class="sr-only rounded-lg bg-accent-600 px-4 py-2 text-white focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-100"
+    class="bg-accent-600 sr-only rounded-lg px-4 py-2 text-white focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-100"
   >
     Skip to content
   </a>
