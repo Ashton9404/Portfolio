@@ -143,8 +143,8 @@ and `public/sitemap.xml`.
 - [x] Add `Ashton_Li_Resume.pdf` to `public/resume/` — the "Download résumé"
       buttons link to `/resume/Ashton_Li_Resume.pdf`. Replacing the file with
       the same name is all a résumé update needs.
-- [ ] Point `projects[].links.github` for **Laravel Admin Starter** at the real
-      repository (currently a placeholder in `src/data/projects.ts`).
+- [x] Point `projects[].links.github` for **Laravel Admin Starter** at the real
+      repository.
 - [ ] Confirm the Vercel URL, then update `siteUrl` in `src/data/profile.ts`.
 
 ## Licence

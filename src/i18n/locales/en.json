@@ -187,16 +187,17 @@
       },
       "laravelAdminStarter": {
         "name": "Laravel Admin Starter",
-        "tagline": "The week of setup work every Laravel project repeats, extracted into a starter kit.",
-        "problem": "Every Laravel project I shipped began the same way: wire up authentication, build a roles-and-permissions layer, scaffold CRUD screens, add a CMS module, then containerise it. That is roughly a week before any product-specific code exists — and each rebuild quietly made slightly different decisions.",
-        "solution": "I extracted that groundwork into an opinionated starter: authentication, a role and permission system enforced through middleware and policies, a dashboard with analytics, generic CRUD management, a CMS module, multi-language support, and a Docker setup that mirrors production.",
-        "outcome": "It removes the part of a project where mistakes are cheapest to make and most expensive to discover later — authorisation. New projects now start from a permission model that has already been thought through once.",
+        "tagline": "The week of setup work every Laravel project repeats, extracted into a starter that actually runs.",
+        "problem": "Every Laravel project I shipped began the same way: authentication, a roles-and-permissions layer, CRUD screens, a content module, then containerisation. That is roughly a week before any product-specific code exists — and each rebuild quietly made slightly different authorisation decisions, which is precisely how security bugs get in.",
+        "solution": "I extracted the groundwork into an opinionated starter, and made it a system rather than a set of management forms: the admin panel lives at /admin while the root is a public website reading the same catalogue, so an edit in the panel is visible to a visitor immediately. Sanctum in SPA cookie mode, RBAC as many-to-many tables with policies for per-record rules, a TipTap catalogue sanitised on write, a media library and an activity log — all on Docker Compose, so the host needs nothing but Docker Desktop.",
+        "outcome": "141 tests pass, and they target authorisation boundaries rather than happy paths: privilege escalation, self-deletion, drafts leaking past filters, passwords reaching the activity log, SVG reaching the media library. Two bugs still got through and were only caught by opening a browser after the suite was green — both are written up in the roadmap, because that lesson generalises.",
         "features": [
-          "Authentication with a role and permission system",
-          "Dashboard analytics and generic CRUD management",
-          "CMS module for editable site content",
-          "Multi-language support across backend and frontend",
-          "Docker deployment matching the production environment"
+          "RBAC with a Gate::before admin bypass, route middleware for features and policies for records",
+          "Bilingual UI across the SPA and the API, so validation errors arrive in the interface's language",
+          "TipTap product catalogue with per-language content, drafts and drag-and-drop public ordering",
+          "Media library with upload, preview and a picker wired into the editor's image button",
+          "Activity log that stays readable after the account or record it refers to has been deleted",
+          "Docker Compose stack: Nginx, PHP 8.4, MySQL 8.4, Redis 7 and Vite"
         ]
       }
     }
@@ -204,28 +205,31 @@
   "openSource": {
     "eyebrow": "05 / Open Source",
     "title": "Laravel Admin Starter",
-    "subtitle": "An opinionated Laravel + Vue admin starter kit for SaaS products and business websites.",
+    "subtitle": "An open-source Laravel 13 + Vue 3 admin panel and public website. Role-based access control, a bilingual interface, a WYSIWYG catalogue, a media library and an audit log — all running in Docker.",
     "whyTitle": "Why I built it",
-    "why": "After the third project where I rebuilt authentication and a permission layer from scratch, it stopped being a coincidence and started being a missing tool. Worse, each rebuild made slightly different authorisation decisions, which is exactly the kind of inconsistency that turns into a security bug. Extracting it into a starter kit forced me to make those decisions once, deliberately, and write them down.",
+    "why": "After the third project where I rebuilt authentication and a permission layer from scratch, it stopped being a coincidence and started being a missing tool. Worse, each rebuild made slightly different authorisation decisions — exactly the kind of inconsistency that becomes a security bug. I also wanted it to be a system that runs rather than a set of management forms, which is why the root of the application is a public website driven by the same catalogue the panel edits: a change made in the admin is visible to a visitor immediately.",
     "challengesTitle": "Technical challenges",
     "challenges": [
-      "Authorisation sprawl. The naive version scatters permission checks across controllers, views and route definitions, so nobody can answer \"who can do this?\" without reading the whole codebase. I moved authorisation into policies behind a single middleware layer: a permission is defined once and enforced everywhere.",
-      "Coherent multi-language support. Backend validation messages, CMS content and frontend strings each want their own translation mechanism. Getting them to behave like one system — rather than three that disagree about the current locale — took more iterations than the permission layer did.",
-      "Staying a starter, not a framework. Every feature added is a feature the next developer has to understand or delete. I have turned down more ideas than I have merged, which is uncomfortable but is the whole point of a starter kit."
+      "Authorisation sprawl. The naive version scatters permission checks across controllers, views and route definitions, so nobody can answer \"who may do this?\" without reading the whole codebase. Roles and permissions became many-to-many tables, feature access moved into route middleware and per-record rules into policies — defined once, enforced everywhere.",
+      "Rich text that cannot become an XSS hole. Sanitising on output means a single forgetful template resurrects the vulnerability. I sanitise on write instead, so the database only ever holds safe HTML — which is what makes it defensible for the public site to render editor output at all.",
+      "One locale, two runtimes. Backend validation messages and frontend strings each want their own translation mechanism. Making them behave like one system, so an error arrives in the language the interface is actually showing, took more iterations than the permission layer did.",
+      "Testing boundaries instead of happy paths. The suite targets privilege escalation, self-deletion, drafts leaking past filters, passwords reaching the activity log and SVG reaching the media library. Two bugs still slipped through and were only caught by opening a browser after the tests were green."
     ],
     "architectureTitle": "Architecture decisions",
     "architecture": [
-      "Laravel owns the API and authorisation; Vue owns the admin interface. The boundary between them is a JSON API, so the frontend can be replaced without touching business logic.",
-      "Docker Compose mirrors the production environment, which removes \"works on my machine\" as a category of bug rather than merely making it rarer.",
-      "CMS content is stored as structured records rather than HTML blobs, so it stays queryable, re-themeable and safe to render.",
-      "Permissions are data, not code. Adding a role is a seeder change, not a deployment of new conditionals."
+      "HTML is sanitised on write, not on output. The database only ever holds safe HTML, so a template that forgets to escape cannot resurrect the hole.",
+      "Authorisation runs before validation, so an unauthorised caller gets a 403 rather than a 422 describing fields they should not know exist.",
+      "A draft returns 404, not 403 — a 403 would confirm the product exists.",
+      "Gate::before grants administrators everything except on their own account, otherwise rules like \"nobody may delete themselves\" never run for the account where they matter most.",
+      "Public API resources are allow-lists, so a column added later stays invisible to the website until somebody decides otherwise.",
+      "Polymorphic columns store short aliases rather than fully-qualified class names, so models can be renamed without breaking history that has already been written."
     ],
     "roadmapTitle": "Roadmap",
     "roadmap": [
-      "An end-to-end test suite covering the permission layer",
-      "Audit logging for administrative actions",
-      "First-class API token management for headless use",
-      "A published documentation site with an installation walkthrough"
+      "SSR or prerendering for the public site — page meta currently only reaches crawlers that execute JavaScript",
+      "A raw-HTML editing mode behind a dedicated permission and a second, server-defined allow-list",
+      "Move mail and background jobs onto the Redis queue with a worker container",
+      "Screenshots and a written walkthrough for the decisions recorded in docs/ROADMAP.md"
     ],
     "viewRepository": "View the repository"
   },

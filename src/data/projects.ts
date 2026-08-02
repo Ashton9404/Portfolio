@@ -53,9 +53,8 @@ export const projects: Project[] = [
     slug: 'laravel-admin-starter',
     i18nKey: 'laravelAdminStarter',
     category: 'openSource',
-    tech: ['Laravel', 'Vue 3', 'MySQL', 'Docker', 'Tailwind CSS'],
-    // TODO(ashton): point at the real repository once it is public.
-    links: { github: 'https://github.com/Ashton9404' },
+    tech: ['Laravel 13', 'PHP 8.4', 'Vue 3', 'Pinia', 'TipTap', 'MySQL 8.4', 'Redis', 'Docker'],
+    links: { github: 'https://github.com/Ashton9404/laravel-admin-starter' },
   },
 ]
 
