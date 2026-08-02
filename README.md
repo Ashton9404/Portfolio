@@ -130,7 +130,13 @@ raw colour shades, so both themes change from one edit.
 5. Deploy. Every push to `main` redeploys; pull requests get preview URLs.
 
 `vercel.json` adds the SPA rewrite so `/projects/<slug>` resolves on a direct
-visit or refresh, plus immutable caching for Vite's fingerprinted assets.
+visit or refresh, plus immutable caching for Vite's fingerprinted assets. The
+catch-all rewrite is safe because Vercel matches static files before rewrites,
+so `/assets/*`, `/og-image.png` and the résumé are served directly.
+
+Note that `vercel.json` is validated against a strict schema — every object in
+`rewrites` and `headers` is `additionalProperties: false`, so there is nowhere
+to put a comment. Keep explanations here instead.
 
 ### Custom domain
 

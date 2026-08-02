@@ -1,15 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [
-    {
-      "comment": "SPA fallback. Vercel matches static files first, so /assets/* and /og-image.png are unaffected; this only catches client-side routes such as /projects/sunyad-corporate-website, which would otherwise 404 on a direct visit or refresh.",
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
   "headers": [
     {
-      "comment": "Vite fingerprints these filenames, so they can be cached forever.",
       "source": "/assets/(.*)",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     }
